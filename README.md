@@ -9,8 +9,4 @@ When the user exits, a list of their transaction history is displayed.
 
 
 **Learning objectives:**
-Review java fundamentals, 
-How to scan CSV files,
-How to have multiple files interact with one another,
-Learn about debugging and common techniques,
-Learn different data structures and when to implement
+java fundamentals, scan CSV files, deal with multiple files interacting with one another, debugging and common techniques, when to implement different data structures 
