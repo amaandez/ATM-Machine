@@ -49,6 +49,7 @@ public class OptionMenu extends ATMProj {
                 }
             }
             System.out.println(" ");
+            printHistory();
         } while(x == 1);
     }
     public void getAccountType(){

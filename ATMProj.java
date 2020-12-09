@@ -6,6 +6,17 @@ public class ATMProj {
     Scanner input = new Scanner(System.in);
     DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
 
+    void addToHistory(String transaction){
+        history.add(transaction);
+    }
+
+    void printHistory(){
+        System.out.println("Transaction History: ");
+        for (String trans: history){
+            System.out.println(trans);
+        }
+    }
+
     public int setCustomerNumber(int customerNumber){
         this.customerNumber = customerNumber;
         return customerNumber;
@@ -28,18 +39,26 @@ public class ATMProj {
     }
     public double calcCheckingWithdraw(double amount){
         checkingBalance = (checkingBalance - amount);
+        String s = Double.toString(amount);
+        addToHistory("Checking Withdraw: $" + s);
         return checkingBalance;
     }
     public double calcSavingWithdraw(double amount){
         savingBalance = (savingBalance - amount);
+         String s = Double.toString(amount);
+        addToHistory("Saving Withdraw: $" + s);
         return savingBalance;
     }
     public double calcCheckingDeposit(double amount){
         checkingBalance = (checkingBalance + amount);
+         String s = Double.toString(amount);
+        addToHistory("Checking Deposit: $" + s);
         return checkingBalance;
     }
     public double calcSavingDeposit(double amount){
         savingBalance = (savingBalance + amount);
+         String s = Double.toString(amount);
+        addToHistory("Saving Deposit: $" + s);
         return savingBalance;
     }
 
@@ -98,4 +117,5 @@ public class ATMProj {
     private int pinNumber;
     private double checkingBalance = 0;
     private double savingBalance = 0;
+    ArrayList<String> history = new ArrayList<>();
 }
